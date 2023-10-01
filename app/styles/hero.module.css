@@ -1,0 +1,47 @@
+.hero {
+    @apply w-full h-full overflow-hidden font-[Monument]
+}
+
+.hero__wrapper {
+    @apply w-full h-[100vh] relative px-5 sm:px-10 lg:px-20
+}
+
+.nav {
+    @apply relative flex w-full h-[5%] items-center justify-between sm:h-[10%]
+}
+
+.logo {
+    @apply sm:tracking-wide sm:text-lg lg:text-xl
+}
+
+.nav__menu {
+    @apply flex items-center justify-center gap-2 sm:gap-4 lg:gap-6 underline underline-offset-2
+} 
+
+.hero__body {
+    @apply w-full h-full flex flex-col justify-center
+}
+
+.hero__body__wrapper {
+    @apply flex flex-col justify-center gap-2 lg:gap-0 sm:mb-16
+}
+
+.hero__image {
+    @apply w-full h-full flex items-center justify-center
+}
+
+.hero__img {
+    @apply rounded-lg w-full h-full sm:w-[250px] sm:h-[300px] lg:w-[400px] lg:h-[450px]
+}
+
+.hero__text__top {
+    @apply flex items-center justify-center text-3xl sm:text-4xl sm:justify-start lg:text-[3.25rem]
+}
+
+.hero__text__bottom {
+    @apply flex items-center justify-center text-3xl sm:text-4xl sm:justify-end lg:text-[3.25rem] lg:mt-1
+}
+
+.hero__icon {
+    @apply w-full absolute bottom-0 text-3xl sm:justify-start sm:text-4xl lg:text-5xl
+}

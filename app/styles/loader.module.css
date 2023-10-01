@@ -1,0 +1,15 @@
+.loader {
+    @apply h-[100vh] w-full overflow-hidden bg-black text-white font-['Monument'] p-5 sm:p-10
+  }
+  
+  .loader__wrapper {
+    @apply relative w-full h-full flex
+  }
+  
+  .loader__text {
+    @apply flex items-start justify-start tracking-wider w-full text-xl font-bold sm:text-2xl lg:text-3xl
+  }
+  
+  .loader__counter {
+    @apply flex items-end w-full justify-end gap-2 text-xl sm:text-2xl
+  }

@@ -1,0 +1,47 @@
+.work {
+    @apply w-full relative h-full overflow-hidden pb-20 bg-black text-white m-0
+}
+
+.work__wrapper {
+    @apply w-full h-screen relative flex flex-col gap-10
+}
+
+.work__nav {
+    @apply h-[10%] flex items-center justify-between px-5 sm:px-10 lg:px-20 sm:tracking-wide sm:text-lg lg:text-xl font-[Monument]
+}
+
+.work__nav__link {
+    @apply underline underline-offset-2
+}
+
+.work__container {
+    @apply w-full h-[90%] flex items-center justify-center
+}
+
+.work__video__wrapper {
+    @apply w-full h-full flex flex-col items-center justify-center
+}
+
+.work__videos {
+    @apply flex flex-row overflow-x-hidden items-center justify-evenly gap-4 h-[50vh] basis-auto grow-0 shrink-0 whitespace-normal
+}
+
+.work__video {
+    @apply w-[270px] h-[400px] sm:w-[400px] lg:w-[700px] lg:h-[700px]
+}
+
+.work__video video {
+    @apply w-full h-full
+}
+
+.work__video__title {
+    @apply w-full absolute bottom-10 flex items-center justify-between px-5 sm:px-10 lg:px-20
+}
+
+.work__video__title h4 {
+    @apply font-[Austin] text-2xl sm:text-3xl lg:text-4xl font-medium
+}
+
+.work__arrow {
+    @apply text-xl font-bold
+}

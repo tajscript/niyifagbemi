@@ -1,0 +1,23 @@
+.about {
+    @apply w-full h-full relative pt-32 mb-20 px-5 sm:px-10 lg:px-20
+}
+
+.about__wrapper {
+    @apply flex w-full h-full flex-row items-center justify-center gap-10
+}
+
+.about__img {
+    @apply hidden md:flex w-1/2 items-center justify-center mt-28
+}
+
+.about__desc {
+    @apply w-full md:w-1/2
+}
+
+.about__text h3 {
+    @apply font-[Monument] text-3xl font-medium sm:text-4xl lg:text-5xl
+}
+
+.about__text p {
+    @apply font-[Austin] my-6 lg:my-10 md:text-lg lg:text-xl lg:w-[90%]
+}

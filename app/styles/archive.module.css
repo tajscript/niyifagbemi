@@ -1,0 +1,23 @@
+.archive {
+    @apply w-full h-full overflow-hidden
+}
+
+.archive__wrapper {
+    @apply w-full h-screen flex flex-row justify-between gap-2
+}
+
+.archive__link {
+    @apply w-[25%] pl-2 pt-2 sm:pl-5 sm:pt-5 sm:text-lg font-mont underline underline-offset-2
+}
+
+.archive__images {
+    @apply w-[75%] flex justify-center items-center
+}
+
+.archive__images__wrapper {
+    @apply flex flex-col gap-2 justify-evenly items-center sm:gap-4
+}
+
+.archive__image {
+    @apply w-full sm:w-[400px]
+}

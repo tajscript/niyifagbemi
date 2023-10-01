@@ -1,0 +1,15 @@
+.footer {
+    @apply bg-black text-gray-500 flex w-full items-center justify-center py-10 font-mont m-0
+}
+
+.footer__wrapper {
+    @apply flex flex-col items-center justify-center gap-2 text-xs sm:text-sm
+}
+
+.footer__wrapper h4 span {
+    @apply underline underline-offset-4 text-base font-bebas text-white tracking-widest pl-1
+}
+
+.footer__link {
+    @apply underline underline-offset-4
+}
