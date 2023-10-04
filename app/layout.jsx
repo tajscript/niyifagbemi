@@ -1,17 +1,23 @@
-import './globals.css'
+"use client"
 
-export const metadata = {
-  title: 'The Niyi Fagbemi',
-  description: 'A Fan site for Niyi Fagbemi',
-}
+import './globals.css'
+import Loader from './loader'
+import { useState, useEffect } from 'react'
 
 export default function RootLayout({ children }) {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2500)
+  }, [])
 
   return (
     <html lang="en">
       <body>
-        {children}
-        </body>
+        {isLoading ? <Loader/> : <>{children}</>}
+      </body>
     </html>
   )
 }

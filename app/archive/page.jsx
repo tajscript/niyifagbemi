@@ -2,6 +2,11 @@ import Link from "next/link"
 import Image from "next/image"
 import ArchiveStyles from "../styles/archive.module.css"
 
+export const metadata = {
+  title: 'Niyi Fagbemi - Archive',
+  description: 'A Fan site for Niyi Fagbemi',
+}
+
 const archive = () => {
   return (
     <div className={ArchiveStyles.archive}>

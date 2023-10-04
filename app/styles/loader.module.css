@@ -11,5 +11,5 @@
   }
   
   .loader__counter {
-    @apply flex items-end w-full justify-end gap-2 text-xl sm:text-2xl
+    @apply flex items-end w-full justify-end text-xl sm:text-2xl
   }

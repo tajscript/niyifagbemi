@@ -1,5 +1,5 @@
 .work {
-    @apply w-full relative h-full overflow-hidden pb-20 bg-black text-white m-0
+    @apply w-full relative h-full overflow-hidden pb-20 m-0
 }
 
 .work__wrapper {
