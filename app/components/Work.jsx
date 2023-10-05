@@ -18,12 +18,10 @@ const Work = () => {
     { src: '/video2.mp4', title: 'Video 2 Title' },
     { src: '/video2.mp4', title: 'Video 3 Title' },
     { src: '/video2.mp4', title: 'Video 4 Title' },
-    { src: '/niyifagbemi.mp4', title: 'Video 5 Title' },
     { src: '/video2.mp4', title: 'Video 6 Title' },
     { src: '/video2.mp4', title: 'Video 7 Title' },
     { src: '/video2.mp4', title: 'Video 8 Title' },
     { src: '/video2.mp4', title: 'Video 9 Title' },
-    { src: '/niyifagbemi.mp4', title: 'Video 10 Title' },
   ]
 
   const handlePrevClick = () => {
