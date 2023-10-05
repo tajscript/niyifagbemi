@@ -23,15 +23,7 @@
 }
 
 .work__videos {
-    @apply flex flex-row overflow-x-hidden items-center justify-evenly gap-4 h-[50vh] basis-auto grow-0 shrink-0 whitespace-normal
-}
-
-.work__video {
-    @apply w-[270px] h-[400px] sm:w-[400px] lg:w-[700px] lg:h-[700px]
-}
-
-.work__video video {
-    @apply w-full h-full
+    @apply relative h-full
 }
 
 .work__video__title {
