@@ -10,28 +10,85 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Work = () => {
   const workBgRef = useRef()
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
-  const [showTitle, setShowTitle] = useState(true)
+  const workRef = useRef()
 
-  const videos = [
-    { src: '/video2.mp4', title: 'Video 1 Title' },
-    { src: '/video2.mp4', title: 'Video 2 Title' },
-    { src: '/video2.mp4', title: 'Video 3 Title' },
-    { src: '/video2.mp4', title: 'Video 4 Title' },
-    { src: '/video2.mp4', title: 'Video 6 Title' },
-    { src: '/video2.mp4', title: 'Video 7 Title' },
-    { src: '/video2.mp4', title: 'Video 8 Title' },
-    { src: '/video2.mp4', title: 'Video 9 Title' },
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const videoProperties = [
+    {
+      id: 1,
+      title: "London Fashion Week",
+      src: "/video2.mp4"
+    },
+    {
+      id: 2,
+      title: "Apapa, Lagos",
+      src: "/video1.mp4"
+    },
+    {
+      id: 3,
+      title: "River Noire, Benin Republic",
+      src: "/video3.mp4"
+    },
+    {
+      id: 4,
+      title: "Lagos Cathedral",
+      src: "/video4.mp4"
+    },
+    {
+      id: 5,
+      title: "Ojude Oba, Ijebu",
+      src: "/video5.mp4"
+    },
+    {
+      id: 6,
+      title: "National Mosque, Abuja",
+      src: "/video6.mp4"
+    },
+    {
+      id: 7,
+      title: "Calabar Carnival",
+      src: "/video7.mp4"
+    },
+    {
+      id: 8,
+      title: "Makoko, Lagos",
+      src: "/video8.mp4"
+    },
+    {
+      id: 9,
+      title: "Mombasa, Kenya",
+      src: "/video9.mp4"
+    },
+    {
+      id: 10,
+      title: "Tanzania",
+      src: "/video10.mp4"
+    },
   ]
 
-  const handlePrevClick = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : videos.length - 1))
+  const nextVideo = () => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+    setCurrentVideoIndex((prevIndex) =>
+      (prevIndex + 1) % videoProperties.length
+    )
+    setIsTransitioning(false);
+    }, 500)
   }
 
-  const handleNextClick = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex === videos.length - 1 ? 0 : prevIndex + 1))
-      }
+  const prevVideo = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+    setCurrentVideoIndex((prevIndex) =>
+      (prevIndex - 1 + videoProperties.length) % videoProperties.length
+    )
+    setIsTransitioning(false);
+    }, 500)
+  }
 
+  const currentVideo = videoProperties[currentVideoIndex];
 
   useLayoutEffect(() => {
 
@@ -49,6 +106,15 @@ const Work = () => {
         duration: 2,
         yoyo: true
     })
+
+    gsap.fromTo(workRef.current, {
+      yPercent: 20,
+  }, {
+      scrollTrigger: {
+          trigger: "#work", scrub: 2, yoyo: true
+      },
+      yPercent: 0,
+  })
     })
 
     return () => {
@@ -59,40 +125,35 @@ const Work = () => {
 
   return (
     <div className={WorkStyles.work} id="work">
-      <div className={WorkStyles.work__wrapper}>
+      <div className={WorkStyles.work__wrapper} ref={workRef}>
         <div className={WorkStyles.work__nav}>
           <h3>NIYI FAGBEMI</h3>
           <Link href="https://youtube.com/" className={WorkStyles.work__nav__link}>YOUTUBE</Link>
         </div>
 
         <div className={WorkStyles.work__container}>
-        <div className={WorkStyles.work__video__wrapper}>
-          <div className={WorkStyles.work__videos} ref={workBgRef}>
-            {videos.map((video, index) => (
-              <div
-                className={WorkStyles.work__video}
-                key={index}
-                >
-                  <video controls autoPlay playsInline loop muted={index !== currentVideoIndex}>
-                    <source src={video.src} type="video/mp4"/>
-                  </video>
-              </div>
-            ))
-            }
-          </div>
+        <div className={WorkStyles.work__videos} ref={workBgRef}>
+          <div className={WorkStyles.work__video__wrapper}>
+          <div className={WorkStyles.work__video__container}>
+            <div className={`${WorkStyles.work__video} ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+              <video autoPlay muted playsInline loop key={currentVideo.src}>
+                <source src={currentVideo.src} type="video/mp4"/>
+              </video>
+            </div>
+            </div>
 
-          <div className={WorkStyles.work__video__title}>
-          <button className={WorkStyles.work__arrow} onClick={handlePrevClick}>
-          <AiOutlineArrowLeft />
-          </button>
-          
-          {showTitle && <h4>{videos[currentVideoIndex].title}</h4>}
-          
-          <button className={WorkStyles.work__arrow} onClick={handleNextClick}>
-          <AiOutlineArrowRight />
-          </button>
+            <div className={WorkStyles.video__title__wrapper}>
+              <button className={WorkStyles.work__icon} onClick={prevVideo}>
+                <AiOutlineArrowLeft/>
+              </button>
+
+              <div className={`${WorkStyles.video__title} ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}><h4>{currentVideo.title}</h4></div>
+
+              <button className={WorkStyles.work__icon} onClick={nextVideo}>
+                <AiOutlineArrowRight/>
+              </button>
+            </div>
           </div>
-          
         </div>
         </div>
 

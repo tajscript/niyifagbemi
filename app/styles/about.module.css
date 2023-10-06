@@ -1,5 +1,5 @@
 .about {
-    @apply w-full h-full relative pt-10 pb-20 px-5 sm:px-10 lg:px-20
+    @apply w-full h-full relative pb-20 px-5 sm:px-10 lg:px-20
 }
 
 .about__wrapper {
@@ -10,12 +10,16 @@
     @apply hidden md:flex w-1/2 items-center justify-center mt-28
 }
 
+.about__image {
+    @apply w-auto h-auto
+}
+
 .about__desc {
     @apply w-full md:w-1/2
 }
 
 .about__text h3 {
-    @apply font-[Monument] text-3xl font-medium sm:text-4xl lg:text-5xl
+    @apply font-bebas text-5xl font-medium sm:text-6xl lg:text-7xl
 }
 
 .about__text p {

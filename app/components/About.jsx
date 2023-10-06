@@ -18,7 +18,7 @@ const About = () => {
             yPercent: 50,
         }, {
             scrollTrigger: {
-                trigger: "#about", scrub: 2, yoyo: true
+                trigger: "#about", scrub: 1, yoyo: true
             },
             yPercent: 0,
         })

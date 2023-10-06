@@ -1,5 +1,5 @@
 .work {
-    @apply w-full relative h-full overflow-hidden pb-20 m-0
+    @apply w-full relative h-full overflow-hidden m-0
 }
 
 .work__wrapper {
@@ -15,25 +15,37 @@
 }
 
 .work__container {
-    @apply w-full h-[90%] flex items-center justify-center
-}
-
-.work__video__wrapper {
-    @apply w-full h-full flex flex-col items-center justify-center
+    @apply h-[90%] flex items-center justify-center
 }
 
 .work__videos {
-    @apply relative h-full
+    @apply h-full w-full
 }
 
-.work__video__title {
-    @apply w-full absolute bottom-10 flex items-center justify-between px-5 sm:px-10 lg:px-20
+.work__video__wrapper {
+    @apply h-full w-full flex flex-col items-center justify-center sm:gap-4
 }
 
-.work__video__title h4 {
-    @apply font-[Austin] text-2xl sm:text-3xl lg:text-4xl font-medium
+.work__video__container {
+    @apply w-full h-[90%] flex justify-center overflow-x-hidden
 }
 
-.work__arrow {
-    @apply text-xl font-bold
+.work__video {
+    @apply w-[550px] h-[550px] transition-opacity duration-500 ease-in-out sm:rounded-lg overflow-hidden
+}
+
+.work__video video {
+    @apply  overflow-hidden h-auto w-full
+}
+
+.video__title__wrapper {
+    @apply w-full h-[10%] flex items-start justify-between px-5 md:px-10 lg:px-20
+}
+
+.video__title__wrapper h4 {
+    @apply font-bebas text-2xl transition-opacity duration-500 ease-in-out
+}
+
+.work__icon {
+    @apply text-2xl
 }

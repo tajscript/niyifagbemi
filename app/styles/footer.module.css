@@ -1,5 +1,5 @@
 .footer {
-    @apply bg-black text-gray-500 flex w-full items-center justify-center py-10 font-mont
+    @apply bg-black text-gray-500 flex w-full items-center justify-center pt-32 pb-10 font-mont mt-0
 }
 
 .footer__wrapper {
