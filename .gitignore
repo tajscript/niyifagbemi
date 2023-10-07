@@ -16,7 +16,7 @@
 /build
 
 # Heavy media
-/public
+*.mp4
 
 # misc
 .DS_Store
