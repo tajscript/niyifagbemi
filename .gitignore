@@ -17,6 +17,7 @@
 
 # Heavy media
 *.mp4
+/public/
 
 # misc
 .DS_Store

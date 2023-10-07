@@ -1,11 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css'
 import ArchiveStyles from "../styles/archive.module.css"
-
-export const metadata = {
-  title: 'Niyi Fagbemi - Archive',
-  description: 'A Fan site for Niyi Fagbemi',
-}
 
 const archive = () => {
   return (
@@ -19,88 +18,17 @@ const archive = () => {
         <div className={ArchiveStyles.archive__images__wrapper}>
 
           <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
-          </div>
-          <div className={ArchiveStyles.archive__image}>
-            <Image
-            width={500}
-            height={500}
-            src="/niyif.jpg"
-            />
+          <Splide aria-label="My Favorite Images">
+              <SplideSlide>
+                <img src="/niyif.jpg" alt="Image 1"/>
+              </SplideSlide>
+              <SplideSlide>
+                <img src="/niyif.jpg" alt="Image 2"/>
+              </SplideSlide>
+              <SplideSlide>
+                <img src="/niyif.jpg" alt="Image 2"/>
+              </SplideSlide>
+          </Splide>
           </div>
 
         </div>

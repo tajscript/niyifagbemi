@@ -19,7 +19,7 @@ const Work = () => {
     {
       id: 1,
       title: "London Fashion Week",
-      src: "/video2.mp4"
+      src: "/video11.mp4"
     },
     {
       id: 2,
