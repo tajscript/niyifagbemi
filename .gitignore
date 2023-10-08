@@ -33,3 +33,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/niyifagbemi.mpe
+public/niyifagbemi.mp4
+public/video2.mp4
