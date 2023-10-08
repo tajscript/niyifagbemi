@@ -3,7 +3,7 @@
 }
 
 .footer__wrapper {
-    @apply flex flex-col items-center justify-center gap-2 text-xs sm:text-sm
+    @apply flex flex-col items-center justify-center text-xs sm:text-sm
 }
 
 .footer__wrapper h4 span {

@@ -10,7 +10,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Work = () => {
   const workBgRef = useRef()
-  const workRef = useRef()
+  const workNavRef = useRef()
+  const workTitleRef = useRef()
+  const workVideoRef = useRef()
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -92,7 +94,7 @@ const Work = () => {
 
   useLayoutEffect(() => {
 
-    let about = gsap.context(() => {
+    let work = gsap.context(() => {
       gsap.fromTo( ["#work", "#about"], {
         backgroundColor: "white"
     }, {
@@ -107,33 +109,50 @@ const Work = () => {
         yoyo: true
     })
 
-    gsap.fromTo(workRef.current, {
-      yPercent: 20,
-  }, {
-      scrollTrigger: {
-          trigger: "#work", scrub: 2, yoyo: true
-      },
-      yPercent: 0,
-  })
+      gsap.fromTo( workNavRef.current, {
+        opacity: 0
+      }, {
+        scrollTrigger: {
+            trigger: workNavRef.current,
+            scrub: 2,
+            end: "bottom bottom",
+        },
+        opacity: 1,
+        duration: 2,
+        yoyo: true
+      })
+
+      gsap.fromTo( workTitleRef.current, {
+        yPercent: 100,
+      }, {
+        scrollTrigger: {
+            trigger: workVideoRef.current,
+            scrub: 2,
+            end: "bottom bottom",
+        },
+        yPercent: 0,
+        duration: 2,
+        yoyo: true,
+      })
     })
 
     return () => {
-        about.revert();
+        work.revert();
     }
 
     }, [])
 
   return (
     <div className={WorkStyles.work} id="work">
-      <div className={WorkStyles.work__wrapper} ref={workRef}>
-        <div className={WorkStyles.work__nav}>
-          <h3>NIYI FAGBEMI</h3>
+      <div className={WorkStyles.work__wrapper}>
+        <div className={WorkStyles.work__nav} ref={workNavRef}>
+          <h3><span>{currentVideo.id}</span>/10</h3>
           <Link href="https://youtube.com/" className={WorkStyles.work__nav__link}>YOUTUBE</Link>
         </div>
 
         <div className={WorkStyles.work__container}>
         <div className={WorkStyles.work__videos} ref={workBgRef}>
-          <div className={WorkStyles.work__video__wrapper}>
+          <div className={WorkStyles.work__video__wrapper} ref={workVideoRef}>
           <div className={WorkStyles.work__video__container}>
             <div className={`${WorkStyles.work__video} ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
               <video autoPlay muted playsInline loop key={currentVideo.src}>
@@ -142,7 +161,7 @@ const Work = () => {
             </div>
             </div>
 
-            <div className={WorkStyles.video__title__wrapper}>
+            <div className={WorkStyles.video__title__wrapper} ref={workTitleRef}>
               <button className={WorkStyles.work__icon} onClick={prevVideo}>
                 <AiOutlineArrowLeft/>
               </button>

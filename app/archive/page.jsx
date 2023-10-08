@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 import ArchiveStyles from "../styles/archive.module.css"
@@ -18,15 +17,31 @@ const archive = () => {
         <div className={ArchiveStyles.archive__images__wrapper}>
 
           <div className={ArchiveStyles.archive__image}>
-          <Splide aria-label="My Favorite Images">
+          <Splide aria-label="" 
+          options={{
+            type: 'loop',
+            perPage: 3,
+            heightRatio: '100%',
+            perMove: 1,
+            arrows: false,
+            pagination: false,
+            autoplay: true,
+            interval: 1500,
+            drag: 'free',
+            gap: '1rem',
+            breakpoints: {
+              640: { perPage: 1.2 }
+            }
+          }}
+          >
               <SplideSlide>
                 <img src="/niyif.jpg" alt="Image 1"/>
               </SplideSlide>
               <SplideSlide>
-                <img src="/niyif.jpg" alt="Image 2"/>
+                <img src="/niyif.jpg" alt="Image 1"/>
               </SplideSlide>
               <SplideSlide>
-                <img src="/niyif.jpg" alt="Image 2"/>
+                <img src="/niyif.jpg" alt="Image 1"/>
               </SplideSlide>
           </Splide>
           </div>

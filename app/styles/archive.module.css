@@ -3,21 +3,21 @@
 }
 
 .archive__wrapper {
-    @apply w-full h-screen flex flex-row justify-between gap-2
+    @apply w-full h-screen flex flex-col justify-between gap-2
 }
 
 .archive__link {
-    @apply w-[25%] pl-2 pt-2 sm:pl-5 sm:pt-5 sm:text-lg font-mont underline underline-offset-2
+    @apply h-[10%] pl-2 pt-2 sm:pl-5 sm:pt-5 sm:text-lg font-mont underline underline-offset-2 w-full 
 }
 
 .archive__images {
-    @apply w-[75%] flex justify-center items-center
+    @apply h-[90%] flex justify-center items-center w-full
 }
 
 .archive__images__wrapper {
-    @apply flex flex-col gap-2 justify-evenly items-center sm:gap-4
+    @apply flex flex-row justify-evenly items-center w-full h-full
 }
 
 .archive__image {
-    @apply w-full sm:w-[400px]
+    @apply w-full
 }
