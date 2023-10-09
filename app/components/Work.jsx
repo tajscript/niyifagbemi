@@ -11,8 +11,6 @@ gsap.registerPlugin(ScrollTrigger)
 const Work = () => {
   const workBgRef = useRef()
   const workNavRef = useRef()
-  const workTitleRef = useRef()
-  const workVideoRef = useRef()
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -121,19 +119,6 @@ const Work = () => {
         duration: 2,
         yoyo: true
       })
-
-      gsap.fromTo( workTitleRef.current, {
-        yPercent: 100,
-      }, {
-        scrollTrigger: {
-            trigger: workVideoRef.current,
-            scrub: 2,
-            end: "bottom bottom",
-        },
-        yPercent: 0,
-        duration: 2,
-        yoyo: true,
-      })
     })
 
     return () => {
@@ -147,12 +132,12 @@ const Work = () => {
       <div className={WorkStyles.work__wrapper}>
         <div className={WorkStyles.work__nav} ref={workNavRef}>
           <h3><span>{currentVideo.id}</span>/10</h3>
-          <Link href="https://youtube.com/" className={WorkStyles.work__nav__link}>YOUTUBE</Link>
+          <Link href="https://www.youtube.com/@Theniyifagbemi" className={WorkStyles.work__nav__link} target="_blank">YOUTUBE</Link>
         </div>
 
         <div className={WorkStyles.work__container}>
         <div className={WorkStyles.work__videos} ref={workBgRef}>
-          <div className={WorkStyles.work__video__wrapper} ref={workVideoRef}>
+          <div className={WorkStyles.work__video__wrapper}>
           <div className={WorkStyles.work__video__container}>
             <div className={`${WorkStyles.work__video} ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
               <video autoPlay muted playsInline loop key={currentVideo.src}>
@@ -161,7 +146,7 @@ const Work = () => {
             </div>
             </div>
 
-            <div className={WorkStyles.video__title__wrapper} ref={workTitleRef}>
+            <div className={WorkStyles.video__title__wrapper}>
               <button className={WorkStyles.work__icon} onClick={prevVideo}>
                 <AiOutlineArrowLeft/>
               </button>
