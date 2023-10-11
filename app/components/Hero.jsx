@@ -21,7 +21,7 @@ const Hero = () => {
 
     let hero = gsap.context(() => {
       gsap.set(heroRef.current, {opacity: 0})
-      gsap.to(heroRef.current, {duration: 1, opacity: 1})
+      gsap.to(heroRef.current, {duration: 1.5, delay: 0.5, opacity: 1})
 
       gsap.to(heroRefTop.current, {
         opacity: 0,

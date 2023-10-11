@@ -1,17 +1,17 @@
 .hero {
-    @apply w-full h-full overflow-hidden font-[Monument]
+    @apply w-full h-screen overflow-hidden font-[Monument]
 }
 
 .hero__wrapper {
-    @apply w-full h-[100vh] relative px-5 sm:px-10 lg:px-20
+    @apply w-full h-full relative px-5 sm:px-10 lg:px-20
 }
 
 .nav {
-    @apply relative flex w-full h-[5%] items-center justify-between sm:h-[10%]
+    @apply relative flex pt-4 w-full h-[5%] items-center justify-between sm:h-[10%] sm:pt-0
 }
 
 .logo {
-    @apply sm:tracking-wide sm:text-lg lg:text-xl
+    @apply sm:tracking-wide text-lg lg:text-xl
 }
 
 .nav__menu {
@@ -35,11 +35,11 @@
 }
 
 .hero__text__top {
-    @apply flex items-center justify-center text-3xl sm:text-4xl sm:justify-start lg:text-[3.25rem]
+    @apply flex items-center justify-center text-3xl sm:justify-start lg:text-[3.25rem] leading-none
 }
 
 .hero__text__bottom {
-    @apply flex items-center justify-center text-3xl sm:text-4xl sm:justify-end lg:text-[3.25rem] lg:mt-1
+    @apply flex items-center justify-center text-3xl sm:justify-end lg:text-[3.25rem] lg:mt-1
 }
 
 .hero__icon {

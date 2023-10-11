@@ -4,13 +4,12 @@ import Link from "next/link"
 import WorkStyles from '../styles/work.module.css'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { gsap } from "gsap"
-import { useLayoutEffect, useRef, useEffect, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 const Work = () => {
   const workBgRef = useRef()
-  const workNavRef = useRef()
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -106,19 +105,6 @@ const Work = () => {
         duration: 2,
         yoyo: true
     })
-
-      gsap.fromTo( workNavRef.current, {
-        opacity: 0
-      }, {
-        scrollTrigger: {
-            trigger: workNavRef.current,
-            scrub: 2,
-            end: "bottom bottom",
-        },
-        opacity: 1,
-        duration: 2,
-        yoyo: true
-      })
     })
 
     return () => {
@@ -130,13 +116,13 @@ const Work = () => {
   return (
     <div className={WorkStyles.work} id="work">
       <div className={WorkStyles.work__wrapper}>
-        <div className={WorkStyles.work__nav} ref={workNavRef}>
+        <div className={WorkStyles.work__nav}>
           <h3><span>{currentVideo.id}</span>/10</h3>
           <Link href="https://www.youtube.com/@Theniyifagbemi" className={WorkStyles.work__nav__link} target="_blank">YOUTUBE</Link>
         </div>
 
         <div className={WorkStyles.work__container}>
-        <div className={WorkStyles.work__videos} ref={workBgRef}>
+        <div className={WorkStyles.work__videos}>
           <div className={WorkStyles.work__video__wrapper}>
           <div className={WorkStyles.work__video__container}>
             <div className={`${WorkStyles.work__video} ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>

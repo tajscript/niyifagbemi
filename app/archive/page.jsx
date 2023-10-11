@@ -14,7 +14,7 @@ const archive = () => {
 
     let archiveAnim = gsap.context(() => {
       gsap.set(archiveRef.current, {opacity: 0})
-      gsap.to(archiveRef.current, {duration: 1, opacity: 1})
+      gsap.to(archiveRef.current, {duration: 1.5, opacity: 1})
     })
 
     return () => {
@@ -37,15 +37,15 @@ const archive = () => {
           options={{
             type: 'loop',
             perPage: 3,
-            width: '100%',
             perMove: 1,
             heightRatio: 0.4,
             arrows: false,
             pagination: false,
             autoplay: true,
+            drag: false,
+            start: 0,
             interval: 1000,
             pauseOnHover: false,
-            drag: 'free',
             gap: '1rem',
             breakpoints: {
               640: { perPage: 1.2, heightRatio : 1.0 }

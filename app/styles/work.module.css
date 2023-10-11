@@ -1,9 +1,9 @@
 .work {
-    @apply w-full relative h-full overflow-hidden m-0
+    @apply w-full relative h-screen overflow-hidden m-0
 }
 
 .work__wrapper {
-    @apply w-full h-screen relative flex flex-col gap-10
+    @apply w-full h-full relative flex flex-col gap-10
 }
 
 .work__nav {
