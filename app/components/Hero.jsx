@@ -97,6 +97,7 @@ const Hero = () => {
 
 
       <section className={HeroStyles.hero__body}>
+        <div className={HeroStyles.hero__body__cont}>
         <div className={HeroStyles.hero__body__wrapper}>
         <div className={HeroStyles.hero__text__top} ref={heroRefTop}>
           <h2>DOCUMENTARY <br /> FILMMAKER</h2>
@@ -114,6 +115,7 @@ const Hero = () => {
 
         <div className={HeroStyles.hero__text__bottom} ref={heroRefBottom}>
           <h2>NIYI FAGBEMI</h2>
+        </div>
         </div>
         </div>
 

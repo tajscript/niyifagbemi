@@ -19,11 +19,15 @@
 } 
 
 .hero__body {
-    @apply w-full h-full flex flex-col justify-center
+    @apply w-full h-[90%] flex flex-col justify-between
+}
+
+.hero__body__cont {
+    @apply w-full h-full flex justify-center items-center
 }
 
 .hero__body__wrapper {
-    @apply flex flex-col justify-center gap-2 lg:gap-0 sm:mb-16
+    @apply w-full gap-2 lg:gap-0
 }
 
 .hero__image {
@@ -43,5 +47,5 @@
 }
 
 .hero__icon {
-    @apply w-full absolute bottom-0 text-3xl sm:justify-start sm:text-4xl lg:text-5xl
+    @apply w-full absolute h-[5%] bottom-0 text-3xl sm:justify-start sm:text-4xl lg:text-5xl
 }
