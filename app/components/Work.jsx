@@ -122,7 +122,7 @@ const Work = () => {
         </div>
 
         <div className={WorkStyles.work__container}>
-        <div className={WorkStyles.work__videos}>
+        <div className={WorkStyles.work__videos} ref={workBgRef}>
           <div className={WorkStyles.work__video__wrapper}>
           <div className={WorkStyles.work__video__container}>
             <div className={`${WorkStyles.work__video} ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
